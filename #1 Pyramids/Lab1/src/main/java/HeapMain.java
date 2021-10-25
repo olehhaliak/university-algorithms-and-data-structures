@@ -36,7 +36,8 @@ public class HeapMain {
         System.out.println("You entered :"+Arrays.toString(heapArr));
         System.out.println("Your array represented as heap:");
         heap.printHeap(heapArr);
-        System.out.println("Sorting using Min Heap...");
+        System.out.println("Building Min Heap...");
+        heap.printHeap(heap.buildMinHeap(heapArr));
         System.out.println("Result :"+Arrays.toString(heap.heapSortDesc(heapArr)));
         System.out.println();
     }
@@ -47,7 +48,9 @@ public class HeapMain {
         System.out.println("You entered :"+Arrays.toString(heapArr));
         System.out.println("Your array represented as heap:");
         heap.printHeap(heapArr);
-        System.out.println("Sorting using Max Heap...");
+        heap.heapSortAsc(heapArr);
+        System.out.println("Building Max Heap...");
+        heap.printHeap(heap.buildMaxHeap(heapArr));
         System.out.println("Result :"+Arrays.toString(heap.heapSortAsc(heapArr)));
         System.out.println();
     }

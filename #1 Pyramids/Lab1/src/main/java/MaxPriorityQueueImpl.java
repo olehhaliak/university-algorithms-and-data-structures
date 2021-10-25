@@ -18,9 +18,19 @@ public class MaxPriorityQueueImpl implements MaxPriorityQueue {
         return max;
     }
 
+    public void heapUpdate(int old,int newVal){
+        for (int i = 0; i < heap.length; i++) {
+            if(heap[i]== old){
+                heapIncreaseKey(i,newVal);
+                return;
+            }
+        }
+        System.out.println("No such value present in heap");
+    }
     public void heapIncreaseKey( int keyIndex, int newKeyValue) {
         if(newKeyValue<heap[keyIndex]){
-            throw new RuntimeException("New key is less than current!");
+            System.out.println("New key is less than current!");
+            return;
         }
         heap[keyIndex] = newKeyValue;
         while (keyIndex>0&&heap[parent(keyIndex)]<heap[keyIndex]){

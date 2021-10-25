@@ -36,12 +36,16 @@ public class PriorityQueueMain {
        while (true){
            System.out.println("1) Insert val:");
            System.out.println("2) Extract val");
+           System.out.println("3) Increase val");
            switch (scn.nextLine()) {
                case "1":
                    maxInsert();
                    break;
                case "2":
                    maxExtract();
+                   break;
+               case "3":
+                   maxUpdate();
                    break;
                case "q":
                    System.exit(0);
@@ -66,18 +70,31 @@ public class PriorityQueueMain {
         maxPriorityQueue.printHeap();
         System.out.println("-------------------");
     }
+
+    private static void maxUpdate() {
+        Scanner scn = new Scanner(System.in);
+        System.out.print("Enter value to update and its new value separated by space(e.g [5 15]) >> ");
+        maxPriorityQueue.heapUpdate(scn.nextInt(),scn.nextInt());
+        System.out.println("-------Heap:-------");
+        maxPriorityQueue.printHeap();
+        System.out.println("-------------------");
+    }
     private static void minPqDemo() {
         Scanner scn = new Scanner(System.in);
         System.out.println("Choose operation:");
         while (true){
             System.out.println("1) Insert val:");
             System.out.println("2) Extract val");
+            System.out.println("3) Decrease val");
             switch (scn.nextLine()) {
                 case "1":
                     minInsert();
                     break;
                 case "2":
                     minExtract();
+                    break;
+                case "3":
+                    minUpdate();
                     break;
                 case "q":
                     System.exit(0);
@@ -98,6 +115,15 @@ public class PriorityQueueMain {
         Scanner scn = new Scanner(System.in);
         System.out.print("Enter value >> ");
         minPriorityQueue.minHeapInsert(scn.nextInt());
+        System.out.println("-------Heap:-------");
+        minPriorityQueue.printHeap();
+        System.out.println("-------------------");
+    }
+
+    private static void minUpdate() {
+        Scanner scn = new Scanner(System.in);
+        System.out.print("Enter value to update and its new value separated by space(e.g [5 15]) >> ");
+        minPriorityQueue.heapUpdate(scn.nextInt(),scn.nextInt());
         System.out.println("-------Heap:-------");
         minPriorityQueue.printHeap();
         System.out.println("-------------------");

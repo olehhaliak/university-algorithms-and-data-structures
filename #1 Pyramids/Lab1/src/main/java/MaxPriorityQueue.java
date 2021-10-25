@@ -8,4 +8,6 @@ public interface MaxPriorityQueue {
     void maxHeapInsert(int newValue);
 
     public void printHeap();
+
+    void heapUpdate(int old,int newVal);
 }

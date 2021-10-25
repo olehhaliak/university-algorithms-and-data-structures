@@ -125,6 +125,6 @@ public class Graph {
     }
 
     public void print() {
-        edges.stream().sorted(Comparator.comparingInt(e -> e.v1)).forEach(System.out::println);
+        edges.stream().forEach(System.out::println);
     }
 }

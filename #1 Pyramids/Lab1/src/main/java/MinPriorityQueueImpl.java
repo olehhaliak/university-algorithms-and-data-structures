@@ -21,6 +21,15 @@ public class MinPriorityQueueImpl implements MinPriorityQueue {
         return min;
     }
 
+    public void heapUpdate(int old,int newVal){
+        for (int i = 0; i < heap.length; i++) {
+            if(heap[i]== old){
+                heapDecreaseKey(i,newVal);
+                return;
+            }
+        }
+        System.out.println("No such value present in heap");
+    }
     @Override
     public void heapDecreaseKey(int keyIndex, int newKeyValue) {
         if (newKeyValue > heap[keyIndex]) {

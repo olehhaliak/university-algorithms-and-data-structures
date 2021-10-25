@@ -8,4 +8,6 @@ public interface MinPriorityQueue {
     void minHeapInsert(int newValue);
 
      void printHeap();
+
+    void heapUpdate(int old,int newVal);
 }
